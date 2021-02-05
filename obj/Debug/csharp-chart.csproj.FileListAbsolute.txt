@@ -8,3 +8,13 @@ C:\Users\Juan\source\repos\csharp-chart\obj\Debug\csharp-chart.csproj.GenerateRe
 C:\Users\Juan\source\repos\csharp-chart\obj\Debug\csharp-chart.csproj.CoreCompileInputs.cache
 C:\Users\Juan\source\repos\csharp-chart\obj\Debug\csharp-chart.exe
 C:\Users\Juan\source\repos\csharp-chart\obj\Debug\csharp-chart.pdb
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp-chart.csprojAssemblyReference.cache
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp_chart.Form1.resources
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp_chart.Properties.Resources.resources
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp-chart.csproj.GenerateResource.cache
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp-chart.csproj.CoreCompileInputs.cache
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp-chart.exe
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\obj\Debug\csharp-chart.pdb
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\bin\Debug\csharp-chart.exe.config
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\bin\Debug\csharp-chart.exe
+C:\Users\sejat\Documents\Visual Studio 2019\Projects\csharp-chart\bin\Debug\csharp-chart.pdb
