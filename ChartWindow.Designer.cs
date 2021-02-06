@@ -42,10 +42,10 @@ namespace csharp_chart
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(446, 339);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(595, 417);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 35);
+            this.button1.Size = new System.Drawing.Size(180, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "Load info";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,43 +62,47 @@ namespace csharp_chart
             this.dataGrid.AllowUserToAddRows = false;
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(11, 11);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGrid.Location = new System.Drawing.Point(15, 14);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersWidth = 51;
             this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.Size = new System.Drawing.Size(570, 324);
+            this.dataGrid.Size = new System.Drawing.Size(760, 399);
             this.dataGrid.TabIndex = 1;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(587, 32);
+            this.comboBox1.Location = new System.Drawing.Point(783, 39);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
+            this.comboBox1.Size = new System.Drawing.Size(267, 24);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(587, 11);
+            this.label1.Location = new System.Drawing.Point(783, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Department filter:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ChartWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChartWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

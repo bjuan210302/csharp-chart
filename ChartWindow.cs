@@ -57,6 +57,18 @@ namespace csharp_chart
                     else
                         break;
                 }
+
+                var control = "";
+
+                for (int i = 0; i < dataGrid.Rows.Count; i++) {
+                    String dept = dataGrid.Rows[i].Cells[2].Value.ToString();
+                    if (!dept.Equals(control))
+                    {
+                        comboBox1.Items.Add(dept);
+                        control = dept;
+                    }
+
+                }
             }
             else
             {
@@ -83,6 +95,12 @@ namespace csharp_chart
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filterField = "Nombre Departamento";
+            ((DataTable)dataGrid.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, comboBox1.Text);
         }
     }
 }
