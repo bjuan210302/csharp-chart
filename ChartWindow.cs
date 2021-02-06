@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows;
 
 namespace csharp_chart
 {
     public partial class ChartWindow : Form
     {
+        string[] labels = { "Municipio", "Isla", "Área no municipalizada" };
         public ChartWindow()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            chart1.Series.Clear();
+            chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
         }
 
         private void LoadCSVOnDataGridView(string fileName)
@@ -60,6 +67,8 @@ namespace csharp_chart
 
                 var control = "";
 
+                int[] instances = {0,0,0}; //Municipio, Isla, Area no Mu
+
                 for (int i = 0; i < dataGrid.Rows.Count; i++) {
                     String dept = dataGrid.Rows[i].Cells[2].Value.ToString();
                     if (!dept.Equals(control))
@@ -68,6 +77,22 @@ namespace csharp_chart
                         control = dept;
                     }
 
+                    String type = dataGrid.Rows[i].Cells[4].Value.ToString();
+                    for (int j = 0; j < labels.Length; j++)
+                    {
+                        if (type.Equals(labels[j]))
+                        {
+                            instances[j]++;
+                            break;
+                        }
+                    }
+                    
+                }
+
+                for (int i = 0; i < labels.Length; i++)
+                {
+                    Series serie = chart1.Series.Add(labels[i]);
+                    serie.Points.Add(instances[i]);
                 }
             }
             else
@@ -100,7 +125,7 @@ namespace csharp_chart
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string filterField = "Nombre Departamento";
-            ((DataTable)dataGrid.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, comboBox1.Text);
+            ((DataTable)dataGrid.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}'", filterField, comboBox1.Text);
         }
     }
 }
