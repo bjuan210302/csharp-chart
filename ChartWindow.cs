@@ -8,15 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
-using System.Data;
 
 namespace csharp_chart
 {
-    public partial class Form1 : Form
+    public partial class ChartWindow : Form
     {
-
-        private String filePath;
-        public Form1()
+        public ChartWindow()
         {
             InitializeComponent();
         }
@@ -29,7 +26,7 @@ namespace csharp_chart
 
                 try
                 {
-                    dataGridView1.DataSource = csv.readCSV;
+                    dataGrid.DataSource = csv.readCSV;
                 }
                 catch (Exception ex)
                 {
@@ -45,24 +42,27 @@ namespace csharp_chart
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //Get the path of specified file
-                filePath = openFileDialog1.FileName;
-                Console.WriteLine(filePath);
+                LoadCSVOnDataGridView(openFileDialog1.FileName);
 
-                
-
-                
-
+                //Deleting annoying, unnecessary rows at the end of the file
+                for (int i = dataGrid.Rows.Count-1; i > 0; i--)
+                {
+                    var item = dataGrid.Rows[i];
+                    if (item.Cells[2].Value == null || item.Cells[2].Value.Equals(""))
+                        dataGrid.Rows.RemoveAt(item.Index);
+                    else
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("No file selected");
             }
 
-            
-
-            LoadCSVOnDataGridView(filePath);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -76,6 +76,11 @@ namespace csharp_chart
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

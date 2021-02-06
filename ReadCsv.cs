@@ -30,11 +30,6 @@ namespace csharp_chart
             string delimiters = ",";
             string extension = Path.GetExtension(fileName);
 
-            if (extension.ToLower() == "txt")
-                delimiters = "\t";
-            else if (extension.ToLower() == "csv")
-                delimiters = ",";
-
             using (TextFieldParser tfp = new TextFieldParser(fileName))
             {
                 tfp.SetDelimiters(delimiters);
